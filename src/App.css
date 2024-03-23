@@ -13,6 +13,11 @@
   background-color: peachpuff;
 }
 
+.buttonPress:hover{
+  cursor: pointer;
+  background-color: blue;
+}
+
 .infoLabel {
   background-color: #e0e0e0;
   padding: 2px 5px;

@@ -21,7 +21,7 @@ const App = () => {
       do {
         imageData = await fetchCatImage();
         catInfo = await fetchCatInfo(imageData.id);
-      } while (catInfo && banList.includes(catInfo.origin)); // Keep fetching until the origin is not in the ban list
+      } while (catInfo && (banList.includes(catInfo.origin) || banList.includes(catInfo.name) || banList.includes(catInfo.weight.imperial))); // Keep fetching until the origin, name, or weight is not in the ban list
       setCatImage(imageData.url);
       setCatData({
         name: catInfo.name,
@@ -32,6 +32,7 @@ const App = () => {
       console.error('Error fetching data:', error);
     }
   };
+  
 
   const fetchCatImage = async () => {
     const response = await axios.get('https://api.thecatapi.com/v1/images/search?&has_breeds=true&limit=1', {
