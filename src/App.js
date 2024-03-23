@@ -76,7 +76,7 @@ const App = () => {
       </div>
       <div className="banList">
         <h2>Ban List</h2>
-        <ul>
+        <ul className='item'>
           {banList.map((attribute, index) => (
             <li key={index}>{attribute}</li>
           ))}

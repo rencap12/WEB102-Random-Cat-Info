@@ -23,3 +23,20 @@
   cursor: pointer;
   background-color: blueviolet;
 }
+
+.item {
+  list-style: none;
+  padding-left: 0;
+  text-align: center; /* Center the list items horizontally */
+}
+
+.item li {
+  display: inline-block; /* Display list items as inline-block for horizontal alignment */
+  margin-right: 10px; /* Add some margin between list items */
+}
+
+.item li::before {
+  content: "•"; 
+  color: black;
+  margin-right: 5px;
+}
